@@ -27,16 +27,12 @@ export const authOptions: AuthOptions = ({
   callbacks: {
     async jwt({ token, user, trigger, session }) {
       if (trigger === "update") {
-        console.log(`FROM NEXTAUTH, JWT TRIGGER`)
         if (session.info) {
-          console.log(session.info)
           if (session.info == "subscribed") {
             token.role = "subscribed"
-            console.log(`TOKEN: ${JSON.stringify(token)}`)
           }
           else if (session.info == "notsubscribed") {
             token.role = 'notsubscribed'
-            console.log(`TOKEN: ${JSON.stringify(token)}`)
           }
         }
       }
@@ -47,6 +43,9 @@ export const authOptions: AuthOptions = ({
       return session;
     },
   },
+  pages: {
+    signIn: "/auth/signin"
+  }
 });
 
 const handler = NextAuth(authOptions)
