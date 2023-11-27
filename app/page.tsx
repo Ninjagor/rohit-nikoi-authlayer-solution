@@ -15,13 +15,12 @@ export default function Home() {
       session.user.role = token.role;
       return session;
     },
-  },
-`
+  },`
   return (
   <>
       <MainNav/>
       <div className="mt-5" />
-      <MaxWidthContentWrapper customStyles="!flex-col">
+      <MaxWidthContentWrapper customStyles="!flex-col mb-10">
         <section className="w-full h-fit min-h-[300px] relative py-3 flex flex-col justify-start gap-5 items-center mt-12">
           <h1 className="text-3xl font-semibold tracking-tight text-center">Authentication Layer <span className="text-sky-400">Solution</span></h1> 
           <p className="text-sm text-neutral-500/70 font-medium lg:max-w-[50%] text-center md:max-w-[75%]">This is my solution to the authentication layer problemset for nikoi. My solution includes protected routes, a google and github authentication layer, role-based access as well as the storing of user data in a PostgreSQL database.</p>
@@ -34,7 +33,7 @@ export default function Home() {
 
 
         <div className="flex flex-col gap-4 mt-5">
-          <h1 className="text-lg font-semibold tracking-tight opacity-80">Code Explanation:</h1>
+          <h1 className="text-lg mb-10 font-semibold tracking-tight opacity-80">Code Explanation:</h1>
           <CodeBlockComponent
           code={codeLineOne}
             language='typescript'

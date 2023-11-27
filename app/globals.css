@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
+
+/* __className_388350 */
+
+code {
+  font-family: "Fira Code", monospace !important;
+}
+
 
 html,
 body,

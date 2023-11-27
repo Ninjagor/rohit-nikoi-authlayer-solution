@@ -40,7 +40,7 @@ export const authOptions: AuthOptions = ({
     }) 
   ],
   callbacks: {
-    async jwt({ token, user, trigger, session }) {
+    async jwt({ token, user, trigger, session, account }) {
       if (trigger === "update") {
         if (session.info) {
           if (session.info == "subscribed") {
@@ -51,10 +51,14 @@ export const authOptions: AuthOptions = ({
           }
         }
       }
-      return { ...token, ...user };
+      if (account) {
+        token.provider = account.provider;
+      }
+      return { ...token, ...user, ...account };
     },
-    async session({ session, token }) {
+    async session({ session, token, user }) {
       session.user.role = token.role;
+      session.user.provider = token.provider;
       return session;
     },
   },

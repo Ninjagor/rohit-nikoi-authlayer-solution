@@ -24,7 +24,7 @@ const SigninButton = () => {
           width={32}
           height={32}
         />
-        <p className="text-sky-600">{session.user.name}</p>
+        <Link href="/dashboard" className="text-sky-600">{session.user.name}</Link>
       </div>
       <LogOut
       size={20}

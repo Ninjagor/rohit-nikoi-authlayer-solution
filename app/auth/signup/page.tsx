@@ -21,13 +21,13 @@ const page = () => {
   const googleAuth = async() => {
     const result = await signIn("google", {
       redirect: true,
-      callbackUrl: "/"
+      callbackUrl: "/dashboard"
     })
   }
   const ghAuth = async() => {
     const result = await signIn("github", {
       redirect: true,
-      callbackUrl: "/"
+      callbackUrl: "/dashboard"
     })
   }
   return (
