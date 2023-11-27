@@ -10,3 +10,72 @@ body,
   padding: 0;
   box-sizing: border-box;
 }
+
+.gradient {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(14, 165, 233, 0.12) 35%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  animation: gradientAnimation 4s ease infinite; 
+}
+
+.gradientone {
+  animation: gradoneAnimation 12s ease-out infinite;
+}
+
+.gradienttwo {
+  animation: gradtwoAnimation 12s ease-out infinite;
+}
+
+@keyframes gradtwoAnimation {
+  0% {
+    margin-top: 0px;
+    left: 70%;
+  }
+  33% {
+    margin-top: 40px;
+    left: 73%;
+  }
+  66% {
+    margin-top: -40px;
+    left: 68%;
+  }
+  100% {
+    margin-top: 0px;
+    left: 70%
+  }
+}
+
+
+@keyframes gradoneAnimation {
+  0% {
+    margin-top: 0px;
+    left: 30%;
+  }
+  33% {
+    margin-top: 40px;
+    left: 33%;
+  }
+  66% {
+    margin-top: -40px;
+    left: 28%;
+  }
+  100% {
+    margin-top: 0px;
+    left: 30%
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 60%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

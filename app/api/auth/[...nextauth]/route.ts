@@ -3,6 +3,7 @@ import prisma from "@/app/lib/prisma";
 import { AuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
+import GithubProvider from "next-auth/providers/github";
 
 export const authOptions: AuthOptions = ({
   session: {
@@ -23,6 +24,20 @@ export const authOptions: AuthOptions = ({
         };
       },
     }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+      profile(profile) {
+        console.log(profile)
+        return {
+          id: profile.id,
+          name: profile.name,
+          email: profile.email,
+          image: profile.avatar_url,
+          role: profile.role ? profile.role : "notsubscribed",
+        };
+      }
+    }) 
   ],
   callbacks: {
     async jwt({ token, user, trigger, session }) {
