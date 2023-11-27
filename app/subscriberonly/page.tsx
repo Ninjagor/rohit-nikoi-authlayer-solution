@@ -9,7 +9,7 @@ import MainNav from '../_components/Navbars/MainNav';
 
 import MaxWidthContentWrapper from '../_components/Wrappers/MaxWidthContentWrapper';
 
-const page = () => {
+const Page = () => {
   const { data: session, status, update } = useSession()
 
   useEffect(() => {
@@ -42,4 +42,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;

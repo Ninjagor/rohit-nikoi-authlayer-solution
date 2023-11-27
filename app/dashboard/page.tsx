@@ -14,7 +14,7 @@ import MainNav from '../_components/Navbars/MainNav';
 import MaxWidthContentWrapper from '../_components/Wrappers/MaxWidthContentWrapper';
 import UpdateSubscription from './components/UpdateSubscription';
 
-const page = async() => {
+const Page = async() => {
   const session = await getServerSession(authOptions);
   if (!session?.user || !session) {
     redirect('/')
@@ -67,4 +67,4 @@ const page = async() => {
   )
 }
 
-export default page
+export default Page

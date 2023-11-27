@@ -10,13 +10,13 @@ import MaxWidthContentWrapper from '@/app/_components/Wrappers/MaxWidthContentWr
 import { signIn, useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 
-const page = () => {
+const Page = () => {
   const { data: session, status, update } = useSession()
   useEffect(() => {
     if (session?.user || session) {
-      redirect("/")
+      redirect("/dashboard")
     }
-  }, [])
+  }, [session])
 
   const googleAuth = async() => {
     const result = await signIn("google", {
@@ -66,4 +66,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;
