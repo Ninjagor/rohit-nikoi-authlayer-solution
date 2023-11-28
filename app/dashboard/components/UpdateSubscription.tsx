@@ -50,7 +50,7 @@ const UpdateSubscription = () => {
       <>
       <div className="flex items-center justify-center gap-4">
         <p className="opacity-50 text-sm font-medium">Tier: Pro Tier</p>
-        <button disabled={isLoading} onClick={removeSubscription} className={`px-4 w-fit text-sm font-medium py-2 rounded-md bg-sky-500 text-white/90 hover:bg-sky-600 hover:text-white ${isLoading && "bg-sky-500 opacity-80 cursor-auto"}`}>Unsubscribe</button>
+        <button disabled={isLoading} onClick={removeSubscription} className={`px-4 w-fit text-sm font-medium py-2 rounded-md bg-sky-500 text-white/90 hover:bg-sky-600 hover:text-white ${isLoading && "bg-sky-500 opacity-80 cursor-auto"}`}>Leave Pro Tier</button>
       </div>
 
       </>
