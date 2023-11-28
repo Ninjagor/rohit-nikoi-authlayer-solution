@@ -22,32 +22,8 @@ const Page = async() => {
   return (
     <>
       <MainNav />
-      <div className="mt-5" />
-      <MaxWidthContentWrapper customStyles='hidden'>
-        <div className="flex flex-col gap-7 items-start">
-            <div className="flex gap-4 items-center justify-center">
-              <p className="text-lg font-semibold opacity-70 tracking-tight">Profile Image: </p>
-              <Image
-                src={session.user.image ?? ""}
-                alt={session.user.name ?? ""}
-                className=" rounded-full"
-                width={40}
-                height={40}
-              />
-            </div>
-            <div className="flex gap-4 items-center justify-center">
-              <p className="text-lg font-semibold opacity-70 tracking-tight">Name:</p>
-              <p>{session.user.name}</p>
-            </div>
-            <div className="flex gap-4 items-center justify-center">
-              <p className="text-lg font-semibold opacity-70 tracking-tight">Email:</p>
-              <p>{session.user.email}</p>
-            </div>
-          <UpdateSubscription />
-
-        </div>
-      </MaxWidthContentWrapper>
-            <MaxWidthContentWrapper>
+      <div className="mt-0" />
+      <MaxWidthContentWrapper>
         <div className="w-full max-w-[600px] ml-auto mr-auto bg-white rounded-md flex flex-col items-center justify-center mt-12 px-4 py-12 gap-4 border-[1px] border-neutral-200">
           <p className="text-xl mb-7 font-medium opacity-50 tracking-tight">Dashboard</p>
           <Image
@@ -60,6 +36,9 @@ const Page = async() => {
               <p className="mt-4 text-3xl font-semibold opacity-80 tracking-tight">{session.user.name}</p>
               <p className="text-md font-medium opacity-50 mt-[-5px]">{session.user.email}</p>
               <p className="text-sm font-medium opacity-40 mt-[-5px]">Provider: {session.user.provider}</p>
+          <UpdateSubscription/>
+          <p className="text-sm font-medium mt-7 opacity-40">Click the button below to access the Pro Dashboard!</p>
+          <Link href="/subscriberonly" className="px-4 py-2 rounded-md text-white bg-sky-400 hover:bg-sky-500 text-sm font-medium">Pro Dashboard</Link>
         </div>
       </MaxWidthContentWrapper>
 
